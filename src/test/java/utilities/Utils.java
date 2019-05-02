@@ -15,7 +15,7 @@ public class Utils {
     //Sets Base URI
     public static void setBaseURI() {
         RestAssured.baseURI = "http://services.groupkt.com/country/get/iso2code";
-    	//RestAssured.baseURI = "http://restapi.demoqa.com/utilities/weatherfull/city";
+    	//RestAssured.baseURI ="https://team3-vanderlande.westeurope.cloudapp.azure.com/package-supplier/api/";
     }
 
     //Sets base path
@@ -50,7 +50,7 @@ public class Utils {
 
     //Returns response
     public static Response getResponse() {
-        System.out.print("path: " + path +"\n");
+        //System.out.print("path: " + path +"\n");
         return get(path);
     }
 
@@ -60,4 +60,6 @@ public class Utils {
         //System.out.print("returned json: " + json +"\n");
         return new JsonPath(json);
     }
+     
+    
 }

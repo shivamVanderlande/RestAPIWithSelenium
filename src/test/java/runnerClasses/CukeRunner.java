@@ -3,12 +3,12 @@ package runnerClasses;
 import java.io.File;
 
 import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 import com.cucumber.listener.Reporter;
 
 import cucumber.api.CucumberOptions;
+
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
@@ -18,7 +18,8 @@ import cucumber.api.junit.Cucumber;
 //        "html:target/cucumberHtmlReport",
 //        "json:target/cucumber-report.json"
 //    }, // Plugin to generate HTML report and json report
-		features = { "src/test/resources/Features" }, glue = { "gluecode" }, tags = { "@API_Test" })
+		features = { "src/test/resources/Features" }, glue = { "gluecode" }, tags = { "@API_Test , @UI_Test" })
+
 public class CukeRunner {
 	@AfterClass
 	public static void setup() {
@@ -29,10 +30,5 @@ public class CukeRunner {
 		Reporter.setSystemInfo("Operating System Type", System.getProperty("os.name").toString());
 		Reporter.setSystemInfo("Environment", "Production");
 		Reporter.setTestRunnerOutput("Test Execution Cucumber Report");
-	}
-	
-	@BeforeClass
-	public void launchBrowser() {
-		
 	}
 }
